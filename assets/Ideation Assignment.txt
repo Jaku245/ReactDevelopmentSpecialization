@@ -1,0 +1,18 @@
+1.Inroduction
+
+We are seeing many portfolios in our routine life.My project is to build an website 'MyPortfolioBuilder' which will create your portfolio immedietely. You can create portfolio by just filling one simple form and choosing an intresting template which will be provided by the dev team.
+
+
+2. Expected list of Features
+
+There will be state management by login and logout , with also user authentication and authorization. There will be pre designed templates created by team , you just have to select one and fill the  form.
+
+
+3.Market Survey
+
+There are many websites available for creating creative portfolios but in all of those user have to maintain designing aspects , user have to design their portfolios they will make designing easy thats it.
+
+
+4. references
+
+You can refer BuilPortfolio.in, wix.com etc. 
