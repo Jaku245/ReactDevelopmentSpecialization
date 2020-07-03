@@ -1,0 +1,17 @@
+1.Inroduction
+
+In the UI design you can see i have created one creative UI for the website called 'Tailbuds'. In this UI there great features specified like login,logout,home page, add breed, update breed , reset password and etc.
+
+2. User Interface Design and Prototype
+
+here is the link for my adobe XD prototype, have a look : https://xd.adobe.com/view/f4829c30-f9b0-4526-4a43-444568465546-82b3/?fullscreen&hints=off
+
+3.Navigation Structure
+
+You can see i have added side menu in it and there are some navigation opyions like Home , My Profile , Help and Logout.
+
+4. references
+
+I have not taken references from any where its my only emagination and work.
+
+Thank You!!! 
