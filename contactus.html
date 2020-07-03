@@ -20,20 +20,24 @@
 <body>
     <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
         <div class="container">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+            <a class="navbar-brand" href="#"><img src="/assets//img/logo.png" alt="logo" height="30" width="41"></a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="#">Ristorante Con Fusion</a>
-            <div class="collapse navbar-collapse" id="Navbar">
+            <div class="collapse navbar-collapse" id="navbar">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="./index.html"><span class="fa fa-home fa-lg"></span>
-                            Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./aboutus.html"><span
-                                class="fa fa-info fa-lg"></span> About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html"><span class="fa fa-home"></span> Home</a>
                     </li>
-                    <li class="nav-item active"><a class="nav-link" href="#"><span
-                                class="fa fa-address-card fa-lg"></span> Contact</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./aboutus.html"><span class="fa fa-info"></span> About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><span class="fa fa-list"></span> Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"><span class="fa fa-address-card"></span> Contact</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -122,22 +126,19 @@
                                 class="form-control">
                         </div>
                         <div class="col-7">
-                            <input type="tel" name="telNum" id="telNum" placeholder="Tel. Number"
-                                class="form-control">
+                            <input type="tel" name="telNum" id="telNum" placeholder="Tel. Number" class="form-control">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="email" class="col-md-2 col-form-label">Email</label>
                         <div class="col-md-10">
-                            <input type="email" name="email" id="email" placeholder="Email"
-                                class="form-control">
+                            <input type="email" name="email" id="email" placeholder="Email" class="form-control">
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-6 offset-md-2">
                             <div class="form-check">
-                                <input type="checkbox" name="checkbox" id="checkbox" value=""
-                                class="form-check-input">
+                                <input type="checkbox" name="checkbox" id="checkbox" value="" class="form-check-input">
                                 <label class="form-check-label" for="checkbox"><strong>May we call you?</strong></label>
                             </div>
                         </div>
@@ -217,9 +218,15 @@
         </div>
     </footer>
     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
-    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
