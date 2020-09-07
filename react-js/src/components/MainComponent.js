@@ -32,7 +32,6 @@ const mapDispatchToProps = dispatch => ({
     resetFeedbackForm: () => { dispatch(actions.reset('feedback')) }
 });
 
-
 class Main extends Component {
 
     componentDidMount() {
