@@ -1,13 +1,50 @@
 import * as ActionTypes from './actionTypes';
 import { baseUrl } from '../shared/baseUrl';
 
+export const postFeedback = (firstName, lastName, mobile, email, agree, contactType, message) => (dispatch) => {
+    const newFeedback = {
+        firstName: firstName,
+        lastName: lastName,
+        mobile: mobile,
+        email: email,
+        agree: agree,
+        contactType: contactType,
+        message: message
+    };
+
+    return fetch(baseUrl + 'feedback', {
+        method: "POST",
+        body: JSON.stringify(newFeedback),
+        headers: {
+            "content-type": "application/json"
+        },
+        credentials: "same-origin"
+    })
+        .then(response => {
+            if (response.ok) {
+                return response;
+            } else {
+                var error = new Error('Error ' + response.status + ': ' + response.statusText);
+                error.response = response;
+                throw error;
+            }
+        },
+            error => {
+                throw error;
+            })
+        .then(response => response.json())
+        .then(response =>
+            alert("Thank you for your feedback!" + JSON.stringify(response))
+        )
+        .catch(error => { console.log('post feedback', error.message); alert('Your Feedback could not be posted\nError: ' + error.message); });
+};
 
 export const addComment = (comment) => ({
     type: ActionTypes.ADD_COMMENT,
     payload: comment
 });
 
-export const postComment =  (dishId, rating, author, comment) => (dispatch) => {
+export const postComment = (dishId, rating, author, comment) => (dispatch) => {
     const newComment = {
         dishId: dishId,
         rating: rating,
@@ -17,31 +54,31 @@ export const postComment =  (dishId, rating, author, comment) => (dispatch) => {
     newComment.date = new Date().toISOString();
 
     return fetch(baseUrl + 'comments', {
-        method : "POST",
-        body : JSON.stringify(newComment),
-        headers : {
-            "Content-Type" : "application/json"
+        method: "POST",
+        body: JSON.stringify(newComment),
+        headers: {
+            "Content-Type": "application/json"
         },
         credentials: "same-origin"
     })
-    .then(response => {
-        if (response.ok) {
-            return response;
-        } else {
-            var error = new Error('Error ' + response.type + ' : ' + response.statusText);
-            error.response = response;
-            throw error;
-        }
-    }, error => {
-        var errMess = new Error(error.message);
-        return errMess;
-    })
-    .then(response => response.json())
-    .then(response => dispatch(addComments(response)))
-    .catch(error => {
-        console.log('post comments', error.message);
-        alert('Your comment could not be posted\nError: '+error.message);
-    });
+        .then(response => {
+            if (response.ok) {
+                return response;
+            } else {
+                var error = new Error('Error ' + response.status + ' : ' + response.statusText);
+                error.response = response;
+                throw error;
+            }
+        }, error => {
+            var errMess = new Error(error.message);
+            throw errMess;
+        })
+        .then(response => response.json())
+        .then(response => dispatch(addComment(response)))
+        .catch(error => {
+            console.log('post comments', error.message);
+            alert('Your comment could not be posted\nError: ' + error.message);
+        });
 };
 
 export const fetchDishes = () => (dispatch) => {
@@ -163,7 +200,10 @@ export const fetchLeaders = () => (dispatch) => {
             return errMess;
         })
         .then(response => response.json())
-        .then(leaders => dispatch(addLeaders(leaders)))
+        .then(leaders => {
+            console.log(leaders);
+            dispatch(addLeaders(leaders))
+        })
         .catch(error => dispatch(leadersFailed(error.message)));
 };
 
